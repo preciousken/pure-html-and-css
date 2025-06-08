@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.page-container {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section - Matching Figma Layout */
+.hero-section {
+    padding: 60px 0 40px;
+    background-color: #f8f9fa;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2d3748;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #718096;
+    line-height: 1.6;
+    max-width: 540px;
+}
+
+/* Water Heater Widget - Exact Figma Match */
+.water-heater-widget {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    min-width: 280px;
+    max-width: 300px;
+    flex-shrink: 0;
+}
+
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.widget-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    line-height: 1.3;
+    flex: 1;
+    margin-right: 8px;
+}
+
+.widget-close {
+    background: none;
+    border: none;
+    color: #e53e3e;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.widget-text {
+    font-size: 13px;
+    color: #718096;
+    line-height: 1.4;
+}
+
+/* Products Section */
+.products-section {
+    padding: 40px 0 60px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Product Cards */
+.product-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Header with Badges */
+.card-header {
+    padding: 16px 20px 0;
+    min-height: 40px;
+}
+
+.badge-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.popular-badge {
+    background: #3182ce;
+    color: white;
+}
+
+.endless-badge {
+    background: #3182ce;
+    color: white;
+}
+
+.upgrade-badge {
+    background: #38a169;
+    color: white;
+}
+
+.badge-icon {
+    font-size: 10px;
+}
+
+/* Card Body */
+.card-body {
+    padding: 16px 20px 0;
+    flex: 1;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.product-info {
+    margin-bottom: 20px;
+}
+
+.product-model {
+    font-size: 14px;
+    color: #4a5568;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.product-options {
+    font-size: 14px;
+    color: #718096;
+}
+
+/* Features List */
+.features-list {
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.feature-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.feature-icon.green {
+    background: #f0fff4;
+    color: #38a169;
+}
+
+/* Service Includes */
+.service-includes {
+    margin-bottom: 20px;
+}
+
+.service-includes h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.service-list {
+    list-style: none;
+}
+
+.service-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #4a5568;
+    line-height: 1.4;
+}
+
+.checkmark {
+    color: #38a169;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 20px;
+    border-top: 1px solid #e2e8f0;
+    margin-top: auto;
+}
+
+.pricing {
+    margin-bottom: 16px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 2px;
+}
+
+.price-note {
+    font-size: 12px;
+    color: #718096;
+}
+
+.shop-btn {
+    width: 100%;
+    background: #38a169;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.shop-btn:hover {
+    background: #2f855a;
+}
+
+/* Financing Section */
+.financing-section {
+    padding: 40px 0;
+    background: #edf2f7;
+}
+
+.financing-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    background: #edf2f7;
+    border-radius: 16px;
+}
+
+.financing-text h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3182ce;
+    margin-bottom: 8px;
+}
+
+.financing-text p {
+    font-size: 16px;
+    color: #4a5568;
+}
+
+.financing-text a {
+    color: #3182ce;
+    text-decoration: underline;
+}
+
+.financing-logos {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.logo.klarna {
+    color: #ffb3d9;
+}
+
+.logo.affirm {
+    color: #3182ce;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .water-heater-widget {
+        max-width: 100%;
+        align-self: flex-end;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .financing-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .hero-section {
+        padding: 40px 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .card-body {
+        padding: 12px 16px 0;
+    }
+    
+    .card-footer {
+        padding: 16px;
+    }
+}

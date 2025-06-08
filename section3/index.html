@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="faq-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="faq-header">
+                <h1 class="faq-title">Frequently Asked Questions</h1>
+            </div>
+
+            <!-- FAQ Items Container -->
+            <div class="faq-container">
+                <!-- FAQ Item 1 - Expanded by default -->
+                <div class="faq-item expanded" data-faq="1">
+                    <div class="faq-question-wrapper">
+                        <h3 class="faq-question">How soon can I get my toilet or water heater installed?</h3>
+                        <button class="faq-toggle" aria-expanded="true" aria-controls="answer-1">
+                            <svg class="toggle-icon close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="faq-answer" id="answer-1">
+                        <p>We guarantee installation within 24 hours of purchase. If we miss the deadline, you get $500 back—no questions asked!</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item" data-faq="2">
+                    <div class="faq-question-wrapper">
+                        <h3 class="faq-question">Do your prices include installation and old unit removal?</h3>
+                        <button class="faq-toggle" aria-expanded="false" aria-controls="answer-2">
+                            <svg class="toggle-icon chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="faq-answer" id="answer-2">
+                        <p>Yes, our prices include everything: professional installation, removal of your old unit, and eco-friendly disposal. There are no hidden fees or surprise charges.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item" data-faq="3">
+                    <div class="faq-question-wrapper">
+                        <h3 class="faq-question">Do you offer financing options?</h3>
+                        <button class="faq-toggle" aria-expanded="false" aria-controls="answer-3">
+                            <svg class="toggle-icon chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="faq-answer" id="answer-3">
+                        <p>Yes, we offer flexible financing options through Klarna and Affirm. You can choose from various payment plans to make your home upgrades more affordable.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item" data-faq="4">
+                    <div class="faq-question-wrapper">
+                        <h3 class="faq-question">What if I have an issue after installation?</h3>
+                        <button class="faq-toggle" aria-expanded="false" aria-controls="answer-4">
+                            <svg class="toggle-icon chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="faq-answer" id="answer-4">
+                        <p>We stand behind our work with a comprehensive warranty. If you experience any issues, our customer service team is available 24/7, and we'll send a technician to resolve the problem at no additional cost.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="faq-cta">
+                <button class="read-more-btn">Read more FAQ's</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Enhanced FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const toggle = item.querySelector('.faq-toggle');
+                const answer = item.querySelector('.faq-answer');
+                
+                toggle.addEventListener('click', function() {
+                    const isExpanded = item.classList.contains('expanded');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('expanded');
+                            const otherToggle = otherItem.querySelector('.faq-toggle');
+                            otherToggle.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isExpanded) {
+                        item.classList.remove('expanded');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    } else {
+                        item.classList.add('expanded');
+                        toggle.setAttribute('aria-expanded', 'true');
+                    }
+                });
+                
+                // Keyboard navigation
+                toggle.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggle.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
