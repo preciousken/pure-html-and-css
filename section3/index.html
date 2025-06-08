@@ -90,30 +90,43 @@
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.faq-item');
             
+            // Add loaded class to all items for proper initial rendering
+            faqItems.forEach(item => {
+                item.classList.add('loaded');
+            });
+            
             faqItems.forEach(item => {
                 const toggle = item.querySelector('.faq-toggle');
-                const answer = item.querySelector('.faq-answer');
+                const questionWrapper = item.querySelector('.faq-question-wrapper');
                 
-                toggle.addEventListener('click', function() {
-                    const isExpanded = item.classList.contains('expanded');
-                    
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('expanded');
-                            const otherToggle = otherItem.querySelector('.faq-toggle');
-                            otherToggle.setAttribute('aria-expanded', 'false');
+                // Make both the button and the question wrapper clickable
+                [toggle, questionWrapper].forEach(element => {
+                    element.addEventListener('click', function(e) {
+                        // Prevent default only for the question wrapper (not the button)
+                        if (element === questionWrapper) {
+                            e.preventDefault();
+                        }
+                        
+                        const isExpanded = item.classList.contains('expanded');
+                        
+                        // Close all other items
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('expanded');
+                                const otherToggle = otherItem.querySelector('.faq-toggle');
+                                otherToggle.setAttribute('aria-expanded', 'false');
+                            }
+                        });
+                        
+                        // Toggle current item
+                        if (isExpanded) {
+                            item.classList.remove('expanded');
+                            toggle.setAttribute('aria-expanded', 'false');
+                        } else {
+                            item.classList.add('expanded');
+                            toggle.setAttribute('aria-expanded', 'true');
                         }
                     });
-                    
-                    // Toggle current item
-                    if (isExpanded) {
-                        item.classList.remove('expanded');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    } else {
-                        item.classList.add('expanded');
-                        toggle.setAttribute('aria-expanded', 'true');
-                    }
                 });
                 
                 // Keyboard navigation
