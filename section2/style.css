@@ -364,35 +364,36 @@ body {
         height: 64px;
     }
     
-    /* Mobile Steps Layout - Horizontal with icons on left */
+    /* Mobile Steps Layout - Icons ABOVE text (vertical layout) */
     .steps-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 48px;
         margin-bottom: 60px;
     }
     
     .step-item {
         display: flex;
-        align-items: flex-start;
-        text-align: left;
-        padding: 0;
-        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 16px;
+        gap: 0;
     }
     
     .step-icon-container {
-        margin-bottom: 0;
+        margin-bottom: 24px;
         flex-shrink: 0;
     }
     
     .step-icon {
-        width: 64px;
-        height: 64px;
+        width: 72px;
+        height: 72px;
     }
     
     .step-content {
         flex: 1;
-        max-width: none;
-        margin: 0;
+        max-width: 320px;
+        margin: 0 auto;
     }
     
     .step-title {
@@ -438,21 +439,29 @@ body {
     }
     
     .steps-grid {
-        gap: 32px;
+        gap: 40px;
     }
     
     .step-item {
-        gap: 16px;
+        padding: 0 12px;
+    }
+    
+    .step-icon-container {
+        margin-bottom: 20px;
     }
     
     .step-icon {
-        width: 56px;
-        height: 56px;
+        width: 64px;
+        height: 64px;
     }
     
     .step-icon svg {
         width: 24px;
         height: 24px;
+    }
+    
+    .step-content {
+        max-width: 280px;
     }
     
     .step-title {
